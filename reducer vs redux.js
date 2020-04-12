@@ -31,43 +31,26 @@ import React, { useReducer } from "react";
 import "./styles.css";
 import { render } from "react-dom";
 
-const App = () => {
-  const initialState = {
-    today: [1, 2, 3],
-    finished: ["Loss", "Win", "Draw"],
-    later: [2, 3, 1, 4, 2, 5]
-  };
+import {createStore} from 'redux'
 
-  // reducer(call to change state) state(current immutable state) initial state(start) action(what/how tomodify)
+//DISPATCH calls reducer with action (calls reducer with action argument)
+store.dispatch(increment)
 
-  const reducer = (state = initialState, action) => {
-    switch (action.type) {
-      case "ADD_TODO":
-        return [...state.today, action.payload];
-      case "DELETE_TODO":
-        return state.today.filter((item, index) => index !== action.payload);
-      case "GET_TODO":
-        return state.finished[1];
-      case "ADD_LATER":
-        return [...state, action.payload];
-      case "DELETE_LATER":
-        return state.filter((item, index) => index !== action.payload);
-      case "GET_LATER":
-        return [...state.later];
-      case "ADD_FINISHED":
-        return [...state, action.payload];
-      case "DELETE_FINISHED":
-        return state.filter((item, index) => index !== action.payload);
-      case "GET_FINISHED":
-        return [...state.finished];
-      default:
-        return state;
+//ACTION(returns name object)
+const increment = () => {
+    return {name: 'INCREMENT'}
+}
+
+//REDUCER(action)
+const counter = (state = 0, action) =>  {
+    switch(action.name){
+        case 'increment':
+            return state +1
     }
-  };
+}
 
-  const newState = reducer(initialState, { type: "GET_TODO" });
-  return <div>{newState}</div>;
-};
+//STORE => GLOBALISED STORE
+let store = createStore(counter)
+
 
 export default App;
-
