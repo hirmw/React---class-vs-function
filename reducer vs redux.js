@@ -27,7 +27,7 @@ function Counter() {
 
 //--------------------------------------------------------------------------
 
-import React, { useReducer } from "react";
+import React from "react";
 import "./styles.css";
 import { render } from "react-dom";
 
