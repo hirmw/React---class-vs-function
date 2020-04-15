@@ -1,3 +1,13 @@
+export class
+  render(){
+    return <div/>
+  }
+
+export function (){
+ return <div/>
+ 
+}
+
 import React, { Component } from 'react';
 
 
@@ -22,6 +32,10 @@ export class tictak extends Component {
                 return 'Scissors'
           }
     }
+    render(){
+        return(
+        <div/>)
+      }
 
     };
   }
