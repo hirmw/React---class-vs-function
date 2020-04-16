@@ -1,12 +1,24 @@
+import React, {} from 'react';
+
+
 export class
   render(){
     return <div/>
   }
 
-export function (){
- return <div/>
- 
+import React, {} from 'react';
+
+--------------------------------------------------- 
+    
+function Tictok(){
+
+  return ( <div> hello</div> )
+
 }
+
+export default Tictok
+          
+---------------------------------------------------         
 
 import React, { Component } from 'react';
 
